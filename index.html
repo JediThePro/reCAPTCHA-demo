@@ -3,19 +3,15 @@
   <head>
     <title>reCAPTCHA demo: Explicit render after an onload callback</title>
     <script type="text/javascript">
-      var onloadCallback = function() {
-        grecaptcha.render('html_element', {
-          'sitekey' : '6LcjLz4aAAAAAEn0crWngvJzkYqfbX_tQJfMI30a'
-        });
+      function recaptchaCallback() {
+        $('#recaptcha').remove();
       };
     </script>
   </head>
   <body>
-    <form action="?" method="POST">
-      <div id="html_element"></div>
+      <div id="recaptcha" class="g-recaptcha" data-callback="6LcjLz4aAAAAAKCBWfECCGQOwvfRzTGXyXOG8VRq" data-sitekey="6LcjLz4aAAAAAEn0crWngvJzkYqfbX_tQJfMI30a"></div>
       <br>
-      <input type="submit" value="Submit">
-    </form>
+      <input type="submit" value="Submit" id="submitBtn">
     <script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit"
         async defer>
     </script>

@@ -2,11 +2,13 @@
 <html>
   <head>
     <title>reCAPTCHA demo: Explicit render after an onload callback</title>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     <script type="text/javascript">
       function recaptchaCallback() {
         $('#recaptcha').remove();
       };
     </script>
+    
   </head>
   <body>
       <div id="recaptcha" class="g-recaptcha" data-callback="6LcjLz4aAAAAAKCBWfECCGQOwvfRzTGXyXOG8VRq" data-sitekey="6LcjLz4aAAAAAEn0crWngvJzkYqfbX_tQJfMI30a"></div>

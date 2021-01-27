@@ -1,23 +1,23 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>reCAPTCHA demo: Simple page</title>
-    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
-    <script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit"
-      async defer>
+    <title>reCAPTCHA demo: Explicit render after an onload callback</title>
+    <script type="text/javascript">
+      var onloadCallback = function() {
+        grecaptcha.render('html_element', {
+          'sitekey' : '6LcjLz4aAAAAAEn0crWngvJzkYqfbX_tQJfMI30a'
+        });
+      };
     </script>
-
-    <script src="script.js"></script>
-    <link rel="stylesheet" href="style.css">
   </head>
-
-  <script>
-    const onloadCallback = function() {
-      alert("grecaptcha is ready!");
-    };
-  </script>
-
   <body>
-    <div class="g-recaptcha" data-sitekey="6LcjLz4aAAAAAEn0crWngvJzkYqfbX_tQJfMI30a"></div>
+    <form action="?" method="POST">
+      <div id="html_element"></div>
+      <br>
+      <input type="submit" value="Submit">
+    </form>
+    <script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit"
+        async defer>
+    </script>
   </body>
 </html>

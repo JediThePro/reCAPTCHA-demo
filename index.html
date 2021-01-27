@@ -4,8 +4,18 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>reCAPTCHA</title>
+
+    <script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit"
+        async defer>
+    </script>
   </head>
   <body>
-    
+    <h1>reCAPTCHA Demo</h1><br>
+
+    <form action="?" method="POST">
+      <div class="g-recaptcha" data-sitekey="6LcjLz4aAAAAAEn0crWngvJzkYqfbX_tQJfMI30a"></div>
+      <br/>
+      <input type="submit" value="Submit">
+    </form>
   </body>
 </html>
